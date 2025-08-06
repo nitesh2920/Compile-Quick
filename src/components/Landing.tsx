@@ -15,36 +15,38 @@ import CustomInput from "./CustomInput";
 import OutputDetails from "./OutputDetail";
 import ThemeDropdown from "./ThemeDropdown";
 import LanguagesDropdown from "./LanguagesDropDown";
+import { defaultCodeSnippets } from "../constants/defaultCode";  // adjust the path as needed
 
-const javascriptDefault = `/**
-* Problem: Binary Search: Search a sorted array for a target value.
-*/
 
-// Time: O(log n)
-const binarySearch = (arr, target) => {
- return binarySearchHelper(arr, target, 0, arr.length - 1);
-};
+// const javascriptDefault = `/**
+// * Problem: Binary Search: Search a sorted array for a target value.
+// */
 
-const binarySearchHelper = (arr, target, start, end) => {
- if (start > end) {
-   return false;
- }
- let mid = Math.floor((start + end) / 2);
- if (arr[mid] === target) {
-   return mid;
- }
- if (arr[mid] < target) {
-   return binarySearchHelper(arr, target, mid + 1, end);
- }
- if (arr[mid] > target) {
-   return binarySearchHelper(arr, target, start, mid - 1);
- }
-};
+// // Time: O(log n)
+// const binarySearch = (arr, target) => {
+//  return binarySearchHelper(arr, target, 0, arr.length - 1);
+// };
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const target = 5;
-console.log(binarySearch(arr, target));
-`;
+// const binarySearchHelper = (arr, target, start, end) => {
+//  if (start > end) {
+//    return false;
+//  }
+//  let mid = Math.floor((start + end) / 2);
+//  if (arr[mid] === target) {
+//    return mid;
+//  }
+//  if (arr[mid] < target) {
+//    return binarySearchHelper(arr, target, mid + 1, end);
+//  }
+//  if (arr[mid] > target) {
+//    return binarySearchHelper(arr, target, start, mid - 1);
+//  }
+// };
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const target = 5;
+// console.log(binarySearch(arr, target));
+// `;
 
 interface OutputDetailsType {
   status?: { id: number; description?: string };
@@ -56,7 +58,7 @@ interface OutputDetailsType {
 }
 
 const Landing: React.FC = () => {
-  const [code, setCode] = useState<string>(javascriptDefault);
+  const [code, setCode] = useState<string>(defaultCodeSnippets.javascript);
   const [customInput, setCustomInput] = useState<string>("");
   const [outputDetails, setOutputDetails] = useState<OutputDetailsType | null>(null);
   const [processing, setProcessing] = useState<boolean>(false);
@@ -73,7 +75,10 @@ const Landing: React.FC = () => {
   const onSelectChange = (selected: LanguageOption | null) => {
     if (selected) {
       setLanguage(selected);
+      setCode(defaultCodeSnippets[selected.value]||"Enter your code here...")
       console.log("selected Option...", selected);
+        console.log("Default snippet found:", defaultCodeSnippets[selected.value]);
+
     }
   };
 
@@ -240,6 +245,7 @@ const Landing: React.FC = () => {
       <div className="flex flex-row space-x-4 items-start px-4 py-4 bg-gray-900 text-purple-200 min-h-[80vh]">
         <div className="flex flex-col w-full h-full justify-start items-end">
           <CodeEditor
+          key={language.value} // Ensure the editor re-renders on language change
             code={code}
             onChange={onChange}
             language={language?.value}
