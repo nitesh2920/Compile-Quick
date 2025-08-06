@@ -1,10 +1,10 @@
 export const defaultCodeSnippets: Record<string, string> = {
   javascript: `// JavaScript (Node.js 12.14.0)
-console.log("Hello, world!");`,
+console.log("Hi from Quick Compile!");`,
 
   assembly: `; Assembly (NASM 2.14.02)
 section .data
-    msg db "Hello, world!", 0
+    msg db "Hi from Quick Compile!", 0
 
 section .text
     global _start
@@ -21,128 +21,128 @@ _start:
     int 0x80`,
 
   bash: `#!/bin/bash
-echo "Hello, world!"`,
+echo "Hi from Quick Compile!"`,
 
-  basic: `10 PRINT "Hello, world!"
+  basic: `10 PRINT "Hi from Quick Compile!"
 20 END`,
 
   c: `#include <stdio.h>
 int main() {
-    printf("Hello, world!\\n");
+    printf("Hi from Quick Compile!\\n");
     return 0;
 }`,
 
   cpp: `#include <iostream>
 int main() {
-    std::cout << "Hello, world!" << std::endl;
+    std::cout << "Hi from Quick Compile!" << std::endl;
     return 0;
 }`,
 
-  clojure: `(println "Hello, world!")`,
+  clojure: `(println "Hi from Quick Compile!")`,
 
   csharp: `using System;
 class Program {
     static void Main() {
-        Console.WriteLine("Hello, world!");
+        Console.WriteLine("Hi from Quick Compile!");
     }
 }`,
 
   cobol: `IDENTIFICATION DIVISION.
 PROGRAM-ID. HelloWorld.
 PROCEDURE DIVISION.
-    DISPLAY "Hello, world!".
+    DISPLAY "Hi from Quick Compile!".
     STOP RUN.`,
 
-  lisp: `(format t "Hello, world!~%")`,
+  lisp: `(format t "Hi from Quick Compile!~%")`,
 
   d: `import std.stdio;
 void main() {
-    writeln("Hello, world!");
+    writeln("Hi from Quick Compile!");
 }`,
 
-  elixir: `IO.puts "Hello, world!"`,
+  elixir: `IO.puts "Hi from Quick Compile!"`,
 
   erlang: `-module(hello).
 -export([hello_world/0]).
 hello_world() ->
-    io:format("Hello, world!~n").`,
+    io:format("Hi from Quick Compile!~n").`,
 
   exe: `# Executable placeholder - no code to show`,
 
-  fsharp: `printfn "Hello, world!"`,
+  fsharp: `printfn "Hi from Quick Compile!"`,
 
   fortran: `program hello
-    print *, "Hello, world!"
+    print *, "Hi from Quick Compile!"
 end program hello`,
 
   go: `package main
 import "fmt"
 func main() {
-    fmt.Println("Hello, world!")
+    fmt.Println("Hi from Quick Compile!")
 }`,
 
-  groovy: `println 'Hello, world!'`,
+  groovy: `println 'Hi from Quick Compile!'`,
 
-  haskell: `main = putStrLn "Hello, world!"`,
+  haskell: `main = putStrLn "Hi from Quick Compile!"`,
 
   java: `public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, world!");
+        System.out.println("Hi from Quick Compile!");
     }
 }`,
 
   kotlin: `fun main() {
-    println("Hello, world!")
+    println("Hi from Quick Compile!")
 }`,
 
-  lua: `print("Hello, world!")`,
+  lua: `print("Hi from Quick Compile!")`,
 
   objectivec: `#import <Foundation/Foundation.h>
 int main() {
     @autoreleasepool {
-        NSLog(@"Hello, world!");
+        NSLog(@"Hi from Quick Compile!");
     }
     return 0;
 }`,
 
-  ocaml: `print_endline "Hello, world!";;`,
+  ocaml: `print_endline "Hi from Quick Compile!";;`,
 
-  octave: `disp('Hello, world!')`,
+  octave: `disp('Hi from Quick Compile!')`,
 
   pascal: `program HelloWorld;
 begin
-  writeln('Hello, world!');
+  writeln('Hi from Quick Compile!');
 end.`,
 
-  perl: `print "Hello, world!\\n";`,
+  perl: `print "Hi from Quick Compile!\\n";`,
 
   php: `<?php
-echo "Hello, world!\\n";
+echo "Hi from Quick Compile!\\n";
 ?>`,
 
   text: `// Plain text - no code`,
 
   prolog: `:- initialization(main).
-main :- write('Hello, world!'), nl, halt.`,
+main :- write('Hi from Quick Compile!'), nl, halt.`,
 
-  python: `print("Hello, world!")`,
+  python: `print("Hi from Quick Compile!")`,
 
-  r: `print("Hello, world!")`,
+  r: `print("Hi from Quick Compile!")`,
 
-  ruby: `puts "Hello, world!"`,
+  ruby: `puts "Hi from Quick Compile!"`,
 
   rust: `fn main() {
-    println!("Hello, world!");
+    println!("Hi from Quick Compile!");
 }`,
 
   scala: `object Main extends App {
-    println("Hello, world!")
+    println("Hi from Quick Compile!")
 }`,
 
   sql: `-- SQL example
-SELECT 'Hello, world!';`,
+SELECT 'Hi from Quick Compile!';`,
 
-  swift: `print("Hello, world!")`,
+  swift: `print("Hi from Quick Compile!")`,
 
-  typescript: `console.log("Hello, world!");`,
+  typescript: `console.log("Hi from Quick Compile!");`,
 };
