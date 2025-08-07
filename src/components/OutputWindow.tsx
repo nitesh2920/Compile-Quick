@@ -56,7 +56,7 @@ const OutputWindow: React.FC<OutputWindowProps> = ({ outputDetails }) => {
 
   return (
     <>
-      <h1 className="mb-3 text-2xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
+      <h1 className="mb-3 text-center sm:text-start mt-3 sm:mt-0 text-2xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
         Output
       </h1>
       <div className="w-full max-w-xl h-48 bg-gradient-to-br from-black via-purple-900 to-purple-800 rounded-lg p-4 overflow-auto shadow-xl border border-purple-700">

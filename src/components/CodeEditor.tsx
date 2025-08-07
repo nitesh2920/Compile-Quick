@@ -38,6 +38,9 @@ useEffect(()=>{
         theme={theme}
         defaultValue="// some comment"
         onChange={handleEditorChange}
+        options={{
+         minimap:{enabled:false}
+        }}
       />
     </div>
   );

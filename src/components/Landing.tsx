@@ -233,17 +233,27 @@ const Landing: React.FC = () => {
       />
 
     
-      <div className="h-4 w-full bg-gradient-to-r from-purple-700 via-purple-900 to-purple-800"></div>
-      <div className="flex flex-row">
-        <div className="px-4 py-2">
+      <div className="h-4  bg-gradient-to-r from-purple-700 via-purple-900 to-purple-800 w-full"></div>
+      <div className="flex flex-row ">
+        <div className="px-2 py-2">
           <LanguagesDropdown onSelectChange={onSelectChange} />
         </div>
-        <div className="px-4 py-2">
+        <div className="px-2 py-2">
           <ThemeDropdown handleThemeChange={handleThemeChange} theme={theme} />
         </div>
       </div>
-      <div className="flex flex-row space-x-4 items-start px-4 py-4 bg-gray-900 text-purple-200 min-h-[80vh]">
-        <div className="flex flex-col w-full h-full justify-start items-end">
+      <div className="flex flex-col sm:flex-row space-x-4 items-start px-4 py-4 bg-gray-900 border-red-600 text-purple-200 min-h-[80vh]">
+         <button
+              onClick={handleCompile}
+              disabled={!code}
+              className={cn(
+                "mt-1 sm:hidden mb-2 border-2 mx-auto border-purple-500 rounded-md shadow-[5px_5px_0px_0px_rgba(128,0,128,0.8)] px-4 py-2 hover:shadow transition duration-200 bg-purple-700 text-white flex-shrink-0",
+                !code ? "opacity-50" : ""
+              )}
+            >
+              {processing ? "Processing..." : "Compile and Execute"}
+            </button>
+        <div className="flex flex-col w-full h-full justify-start items-end ">
           <CodeEditor
           key={language.value} // Ensure the editor re-renders on language change
             code={code}
@@ -253,7 +263,7 @@ const Landing: React.FC = () => {
           />
         </div>
 
-        <div className="right-container flex flex-shrink-0 w-[30%] flex-col space-y-4">
+        <div className="right-container flex flex-shrink-0  sm:w-[30%]  flex-col space-y-4">
           <OutputWindow outputDetails={outputDetails} />
           <div className="flex flex-col items-end">
             <CustomInput customInput={customInput} setCustomInput={setCustomInput} />
@@ -261,7 +271,7 @@ const Landing: React.FC = () => {
               onClick={handleCompile}
               disabled={!code}
               className={cn(
-                "mt-4 border-2 border-purple-500 rounded-md shadow-[5px_5px_0px_0px_rgba(128,0,128,0.8)] px-4 py-2 hover:shadow transition duration-200 bg-purple-700 text-white flex-shrink-0",
+                "hidden sm:block mt-4 border-2 border-purple-500 rounded-md shadow-[5px_5px_0px_0px_rgba(128,0,128,0.8)] px-4 py-2 hover:shadow transition duration-200 bg-purple-700 text-white flex-shrink-0",
                 !code ? "opacity-50" : ""
               )}
             >

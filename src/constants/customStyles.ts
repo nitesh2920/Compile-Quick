@@ -5,8 +5,8 @@ export const customStyles: StylesConfig<unknown, false> = {
   control: (styles) => ({
     ...styles,
     width: "100%",
-    maxWidth: "14rem",
-    minWidth: "12rem",
+    maxWidth: "12rem",
+    minWidth: "10rem",
     borderRadius: "5px",
     color: "#000",
     fontSize: "0.8rem",
